@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'auth_page.dart';
+import 'splash_screen.dart'; // Ensure this is imported
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,9 +15,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Firebase Auth Demo',
-      theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.blue),
-      home: const AuthPage(),
+      title: 'Chat Me',
+      theme: ThemeData(
+        useMaterial3: true,
+        // WhatsApp-like green
+        colorSchemeSeed: Colors.green[700],
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.green[700],
+          foregroundColor: Colors.white,
+        ),
+        floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: Colors.green[700],
+          foregroundColor: Colors.white,
+        ),
+      ),
+      home: const SplashScreen(), // Show SplashScreen first
     );
   }
 }
